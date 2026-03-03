@@ -1,4 +1,4 @@
-/* //CSS para api1.html */
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -364,72 +364,81 @@ body {
 
 /* --- AJUSTES DE ADAPTAÇÃO PARA MOBILE --- */
 
+/* --- ATUALIZAÇÃO FINAL: FOCO EM RESPONSIVIDADE E CORREÇÃO DE CORTES --- */
+
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* Empilha os containers se houver mais de um */
-        padding: 80px 10px 20px 10px; /* Espaço para os botões fixos no topo */
+        display: block; /* Muda de flex para block para permitir rolagem natural */
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 110px 15px 40px 15px; /* Espaço para não cobrir o topo */
         height: auto;
         min-height: 100vh;
-        overflow-y: auto;
     }
 
-    /* Ajustando os botões de navegação para não sobrepor o conteúdo */
-    .tabs, .home {
+    /* CORREÇÃO DA NUVEM CORTADA */
+    body::before {
+        width: 100%;
+        height: 180px; 
+        top: 0;
+        left: 0;
+        background-size: contain; /* Faz a nuvem caber inteira na largura */
+        background-position: center top;
+        opacity: 0.7;
+        z-index: -1;
+    }
+
+    /* AJUSTE DOS BOTÕES (VOLTAR / BUSCAR) */
+    .home, .tabs {
         position: absolute;
-        top: 10px;
-        width: calc(100% - 20px);
-        display: flex;
-        justify-content: center;
-        right: auto;
-        left: 10px;
-        gap: 5px;
-    }
-
-    .home {
-        top: 10px;
-        justify-content: flex-start;
+        top: 15px;
         width: auto;
+        z-index: 10;
     }
 
-    .tabs {
-        justify-content: flex-end;
-        width: auto;
-        right: 10px;
-        left: auto;
+    .home { left: 10px; }
+    .tabs { right: 10px; }
+
+    .home button, .tabs button {
+        width: 140px; /* Tamanho fixo para evitar colisão */
+        padding: 12px 5px;
+        font-size: 13px;
+        white-space: nowrap;
     }
 
-    /* Diminuindo os botões no mobile */
-    .tabs button, .home button {
-        width: auto;
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    /* Ajustando os containers de formulário e clima */
+    /* FORMULÁRIO E CONTAINER DE CLIMA */
     .form-container, .weather-container {
-        width: 90%; 
-        max-width: 400px;
-        margin: 20px auto;
-        box-sizing: border-box; /* Garante que o padding não estoure a largura */
-    }
-
-    /* Ajustando elementos flutuantes (nuvens/sol) para não atrapalhar a visão */
-    body::after {
-        width: 80px;
-        height: 80px;
-        bottom: 5%;
-        right: 5%;
-    }
-
-    .chuva, .nublado, .tempestade {
-        width: 80px;
-        height: 80px;
-        opacity: 0.6; /* Deixa um pouco mais sutil no mobile */
+        width: 100%; 
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+        padding: 20px;
+        box-sizing: border-box; /* Impede que o container "vaze" para a direita */
     }
 
     input[type="text"] {
-        width: 100%; /* Ocupa a largura total disponível */
+        width: 100%; 
         box-sizing: border-box;
+    }
+
+    /* AJUSTE DOS ÍCONES DE CLIMA ESPALHADOS */
+    body::after, .chuva, .nublado, .tempestade {
+        width: 70px; /* Menores para não sobrepor o texto */
+        height: 70px;
+        background-size: contain;
+        opacity: 0.5;
+    }
+
+    /* Reposicionando para não sumirem da tela */
+    body::after { bottom: 5%; right: 5%; }
+    .nublado { bottom: 5%; left: 5%; }
+    .chuva { bottom: 30%; left: 80%; }
+}
+
+/* Ajuste extra para celulares muito pequenos */
+@media (max-width: 380px) {
+    .home button, .tabs button {
+        width: 110px;
+        font-size: 11px;
     }
 }
 
