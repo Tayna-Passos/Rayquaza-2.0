@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação de CEP e Previsão do Tempo</title>
+    <link rel="stylesheet" href="api.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icone.32.png"/>
+   
+    <script>
+      function buscar() {  //function do cep
+        var cepInput = document.getElementById('cep');
+        var rua = document.getElementById('rua');
+        var bairro = document.getElementById('bar');
+        var cidade = document.getElementById('cid');
+        var estado = document.getElementById('est');
+        var weatherSection = document.getElementById('weather-section');
+        var cepSection = document.getElementById('cep-section');
+        var cepDigitado = cepInput.value.trim();
+          if (!isCepValido(cepDigitado)) {
+            alert('Por favor, digite um CEP válido com 8 dígitos.');
+            return; // Impede a chamada da API se o formato for inválido
+          }
+        
+        var url = "https://viacep.com.br/ws/" + cep.value + "/json/";
+        fetch(url)
+        .then((resp) => resp.json())
+        .then((json) => {
+          if (json.erro) {
+        alert('CEP não encontrado.');
+        return;
+      }
+          rua.value = json.logradouro;
+          bairro.value = json.bairro;
+          cidade.value = json.localidade;
+          estado.value = json.uf;
+          if (weatherSection) {
+        weatherSection.style.display = 'block';
+      }
+      if (cepSection) {
+        cepSection.style.display = 'none';
+      }
+    })
+    .catch(() => {
+      alert('Erro ao buscar o CEP.');
+        });
+      }
+      // function buscarTempo() {  //function do tempo
+      //   var cep = document.getElementById('cep');
+      //   var rua = document.getElementById('rua');
+      //   var bairro = document.getElementById('bar');
+      //   var cidade = document.getElementById('cid');
+      //   var estado = document.getElementById('est');
+        
+      //   var url = "https://viacep.com.br/ws/" + cep.value + "/json/";
+      //   fetch(url)
+      //   .then((resp) => resp.json())
+      //   .then((json) => {
+      //     rua.value = json.logradouro;
+      //     bairro.value = json.bairro;
+      //     cidade.value = json.localidade;
+      //     estado.value = json.uf;
+      //   });
+      // }
+      function isCepValido(cep) {
+  // Remove caracteres não numéricos
+  const cepNumerico = cep.replace(/\D/g, '');
+
+  return cepNumerico.length === 8;
+}
+      function mostrarAbas(aba) { //function de mostrar abas
+        var cepSection = document.getElementById('cep-section');
+        var weatherSection = document.getElementById('weather-section');
+        
+        if (aba === 'cep') {
+          cepSection.style.display = 'block';
+          weatherSection.style.display = 'none';
+        } else {
+          weatherSection.style.display = 'block';
+          cepSection.style.display = 'none';
+        }
+      }
+
+      window.onload = function() {
+        mostrarAbas('cep');
+      };
+    </script>
+</head>
+<body>
+    <!-- Seu conteúdo aqui -->
+    
+    <div class="nublado"></div>
+    <br>
+      <div class="tempestade"></div>
+    <br>
+      <div class="chuva"></div>
+ 
+    <div class="tabs">
+        <button onclick="mostrarAbas('cep')">Buscar Endereço</button>
+    </div>
+    
+    <div class="home">
+      <button onclick="window.location.href='index.html'">Voltar</button>
+    </div>
+
+    <div id="cep-section" class="form-container">
+      <h1>Buscar Endereço por CEP</h1>
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep"><br><br>
+      <input type="button" value="Buscar" onClick="buscar()"/><br><br>
+      
+      <label for="rua">Rua:</label>
+      <input type="text" id="rua" readonly><br><br>
+      
+      <label for="bar">Bairro:</label>
+      <input type="text" id="bar" readonly><br><br>
+      
+      <label for="cid">Cidade:</label>
+      <input type="text" id="cid" readonly><br><br>
+      
+      <label for="est">Estado:</label>
+      <input type="text" id="est" readonly><br><br>
+  
+      </div>
+    </div>
+
+<!-- Previsão do tempo -->
+    <div id="weather-section" class="weather-container">
+        <div class="current-weather">
+            <div class="location">
+                <button id="buscarBtn" value="Buscar" onclik= buscar>Buscar Clima Atual</button>
+                <div id="clima"></div>
+                <p> <i class="fa-solid fa-location-dot"></i> Brasil</p>
+            </div>
+            <div class="weather-info">
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="img"></div>
+    <script src="script.js"></script>
+</body>
+</html>

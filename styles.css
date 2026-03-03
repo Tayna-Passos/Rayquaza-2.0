@@ -1,0 +1,249 @@
+/* --- MANTENDO SEU DESIGN ORIGINAL (PC) --- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    color: white;
+    background-color: #001f55;
+    text-align: center;
+    padding: 20px 0; /* Adicionado apenas para dar um respiro no título */
+}
+
+body {
+    background-color: #53BAFA;
+    text-align: justify;
+    margin: 50px; /* Seu design original */
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-size: 33px;
+}
+
+.cabecalho {
+    text-align: center;
+}
+
+.cabecalho img {
+    width: 50%;
+    margin: 0 auto; /* Centraliza a logo */
+    display: block;
+}
+
+.cabecalho blockquote {
+    text-align: left;
+    color: black;
+    font-size: 25px;
+}
+
+h3 {
+    color: white;
+    font-size: 25px;
+}
+
+p {
+    text-align: left;
+    color: black;
+    font-size: 25px;
+}
+
+/* Ajuste na seção Dev para manter o alinhamento */
+.Dev {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards no PC */
+    gap: 20px;
+}
+
+.Dev div {
+    border: 10px solid #53BAFA;
+    width: 500px;
+    text-align: center;
+}
+
+.Dev h3 {
+    text-align: center; /* Ajustado para alinhar com a foto */
+    color: black;
+}
+
+.Dev img {
+    width: 150px; /* Tamanho fixo para as fotos do time ficarem uniformes */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Opcional: deixa as fotos redondas */
+    margin: 10px auto;
+}
+
+.service blockquote {
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #001f55;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+/* Ajuste importante: Imagens genéricas */
+img {
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse a tela */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centraliza por padrão */
+}
+
+ul {
+    color: aliceblue;
+}
+
+ul a:hover {
+    color: #ffcc00;
+}
+
+/* --- AJUSTES PARA CELULAR (Telas de até 768px) --- */
+
+@media (max-width: 768px) {
+    body {
+        margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
+        font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .cabecalho img {
+        width: 80%; /* Logo maior no celular para ser visível */
+    }
+
+    .Dev div {
+        width: 100%; /* No celular, cada dev ocupa a linha toda */
+    }
+
+    img {
+        margin-left: 0; /* Remove aquele margin-left de 200px que quebraria o layout */
+        width: 100%;
+    }
+
+    blockquote, p, h3 {
+        font-size: 18px !important; /* Ajuste de leitura para telas pequenas */
+    }
+}
+/* --- SEU CSS ORIGINAL (Sem alterações) --- */
+/* (Mantenha o resto do seu CSS como estava acima) */
+
+.Dev{
+    display:flex;
+    flex-wrap: wrap;
+}
+.Dev div{
+    border: 10px solid #53BAFA;
+    width: 500px;
+}
+
+/* ... (Mantenha o resto do seu CSS até o @media) ... */
+
+/* --- AJUSTES PARA CELULAR (Telas de até 768px) --- */
+
+@media (max-width: 768px) {
+    body {
+        margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
+        font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .cabecalho img {
+        width: 80%; /* Logo maior no celular para ser visível */
+    }
+
+    .Dev div {
+        width: 100%; /* No celular, cada dev ocupa a linha toda */
+        text-align: center; /* Centraliza o conteúdo (avatar + nome) */
+        padding: 10px 0; /* Adiciona um pouco de espaçamento vertical */
+    }
+
+    /* --- ESTA É A NOVA REGRA PARA DIMINUIR OS AVATARES NO CELULAR --- */
+    .Dev img {
+        width: 100px; /* Reduz a largura para 100px */
+        height: 100px; /* Reduz a altura para 100px */
+        border-radius: 50%; /* Mantém os avatares redondos */
+        object-fit: cover; /* Garante que a imagem se ajuste ao círculo sem distorcer */
+        margin: 10px auto; /* Centraliza o avatar horizontalmente e adiciona margem vertical */
+    }
+    /* ----------------------------------------------------------------- */
+
+    img {
+        margin-left: 0; /* Remove aquele margin-left de 200px que quebraria o layout */
+        width: 100%;
+    }
+
+    blockquote, p, h3 {
+        font-size: 18px !important; /* Ajuste de leitura para telas pequenas */
+    }
+}
+/* Reduzindo especificamente as imagens de CEP e Previsão na div .service */
+.service img {
+    width: 400px; /* Altere este valor para o tamanho desejado */
+    height: auto;
+    display: inline-block; /* Mantém as imagens alinhadas horizontalmente */
+    margin: 20px; /* Margem menor e centralizada */
+    margin-left: 20px; /* Remove o margin-left de 200px */
+}
+/* 1. Novo Fundo com Gradiente */
+body {
+    background: linear-gradient(180deg, #53BAFA 0%, #a2d9ff 100%);
+    line-height: 1.6; /* Melhora a leitura */
+    color: #222;
+}
+
+/* 2. Transformando os Links em Botões Modernos */
+a[href$=".html"], a[href$=".pdf"] {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #001f55;
+    color: white !important;
+    border-radius: 50px; /* Botão pilula */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+a:hover {
+    transform: translateY(-3px); /* Efeito de flutuar */
+    background-color: #ffcc00;
+    color: #001f55 !important;
+}
+
+/* 3. Cards da Equipe (Visual "Glassmorphism") */
+.Dev div {
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    width: 250px; /* Largura mais padrão para cards */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Estilo das Citações (Blockquote) */
+blockquote {
+    border-left: 5px solid #001f55;
+    padding-left: 20px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0 10px 10px 0;
+    margin: 20px 0;
+}

@@ -1,0 +1,446 @@
+/* //CSS para api1.html */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #61a0ff, #106296);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before, body::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    top: 5%;
+    left: 10%; 
+    width: 50%; 
+    height: 25%; 
+    background-image: url('img/nuvemcss.png'); 
+    animation: moveClouds 40s ease-in-out infinite; 
+}
+
+body::after {
+    bottom: 10%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background-image: url('img/solcss.png'); 
+    animation: moveSun 10s linear infinite; 
+}
+.chuva{
+    position: absolute;
+    bottom: 40%;
+    left: 70%;
+    width: 150px;
+    height: 150px;
+    background-image: url('img/chuva.png'); /* Ajuste o caminho da imagem */
+    background-size: cover;
+    animation: moveTempestade 10s linear infinite;
+}
+.nublado {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    background-image: url('img/nublado.png'); /* Ajuste o caminho da imagem */
+    background-size: cover;
+    animation: moveTempestade 10s linear infinite;
+}
+
+.tempestade {
+    position: absolute;
+    bottom: 25%;
+    left: 20%;
+    width: 150px;
+    height: 150px;
+    background-image: url('img/tempestade.png'); /* Ajuste o caminho da imagem */
+    background-size: cover;
+    animation: moveTempestade 10s linear infinite;
+}
+.image{
+    width: 30%;
+    height: auto;
+}
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0); 
+    }
+    50% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+
+@keyframes moveSun {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-50px) translateY(50px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Animação da tempestade (movimento horizontal) */
+
+@keyframes moveNublado {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(50px) translateY(10px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes moveTempestade {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(50px) translateY(10px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+@keyframes moveChuva {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(50px) translateY(10px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+.weather-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.location {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.location h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.weather-icon {
+    width: 80px;
+}
+
+.temperature {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.forecast h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.forecast-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forecast-item {
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+}
+
+.tabs {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.tabs button {
+    background-color: #ffcc00;
+    color: #003366;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+
+.tabs button:hover {
+    background-color: #e6b800;
+}
+
+.home{
+    position: absolute;
+  top:20px;
+  left: 20px;display: flex;justify-content:flex-end;
+  gap: 10px; 
+  }
+  .home button:hover {
+  background-color:#e6b800;
+  }
+   .home button {
+  background-color:#ffcc00;
+  color:#003366;
+  border: none;
+  padding: 20px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s
+  ease;
+     width: 150px;}  
+
+.form-container {
+    width: 400px;
+    padding: 30px;
+    background-color: rgba(48, 146, 212, 0.856); 
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-out; 
+}
+
+label {
+    font-size: 16px;
+    color: #f1f1f1; 
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 2px solid #003366; 
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #485d97;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcc00; 
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); 
+    outline: none;
+}
+
+input[type="button"] {
+    background-color: #ffcc00; 
+    color: #003366; 
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+}
+
+input[type="button"]:hover {
+    background-color: #e6b800;
+}
+
+button{
+    background-color: #ffcc00; 
+    color: #003366; 
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+}
+
+input[readonly] {
+    background-color: #f4f4f4; 
+    color: #101111; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 480px) {
+    .form-container, .weather-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label, input[type="text"], input[type="button"] {
+        font-size: 14px; /* Ponto e vírgula adicionado aqui */
+    }
+}
+#clima{
+    color: white;
+}
+/* --- SEU CSS ORIGINAL MANTIDO --- */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #61a0ff, #106296);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden; /* Ajustado para evitar rolagem lateral no mobile */
+}
+
+/* ... (Todo o restante do seu código original de animações e classes) ... */
+
+/* [MANTENHA AQUI TODO O SEU CÓDIGO ATÉ O FINAL] */
+
+/* --- AJUSTES DE ADAPTAÇÃO PARA MOBILE --- */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Empilha os containers se houver mais de um */
+        padding: 80px 10px 20px 10px; /* Espaço para os botões fixos no topo */
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    /* Ajustando os botões de navegação para não sobrepor o conteúdo */
+    .tabs, .home {
+        position: absolute;
+        top: 10px;
+        width: calc(100% - 20px);
+        display: flex;
+        justify-content: center;
+        right: auto;
+        left: 10px;
+        gap: 5px;
+    }
+
+    .home {
+        top: 10px;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .tabs {
+        justify-content: flex-end;
+        width: auto;
+        right: 10px;
+        left: auto;
+    }
+
+    /* Diminuindo os botões no mobile */
+    .tabs button, .home button {
+        width: auto;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Ajustando os containers de formulário e clima */
+    .form-container, .weather-container {
+        width: 90%; 
+        max-width: 400px;
+        margin: 20px auto;
+        box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    }
+
+    /* Ajustando elementos flutuantes (nuvens/sol) para não atrapalhar a visão */
+    body::after {
+        width: 80px;
+        height: 80px;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    .chuva, .nublado, .tempestade {
+        width: 80px;
+        height: 80px;
+        opacity: 0.6; /* Deixa um pouco mais sutil no mobile */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Ocupa a largura total disponível */
+        box-sizing: border-box;
+    }
+}
+
+/* Ajuste específico para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .weather-info .temperature {
+        font-size: 2rem;
+    }
+}
