@@ -112,10 +112,11 @@ ul a:hover {
 
 /* --- AJUSTES PARA CELULAR (*/
 
-@media (max-width: 758px) {
+@media (max-width: 768px) {
     body {
         margin: 10px; /* Reduz a margem lateral no celular para ganhar espaço */
         font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
+        box-sizing: border-box;
     }
 
     h2 {
@@ -138,6 +139,11 @@ ul a:hover {
     blockquote, p, h3 {
         font-size: 18px !important; /* Ajuste de leitura para telas pequenas */
     }
+    .form-container, .weather-container {
+        width: 100%; 
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
 }
 /* --- SEU CSS ORIGINAL (Sem alterações) --- */
 /* (Mantenha o resto do seu CSS como estava acima) */
@@ -159,6 +165,7 @@ ul a:hover {
     body {
         margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
         font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
+        box-sizing: border-box;
     }
 
     h2 {
@@ -246,4 +253,5 @@ blockquote {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0 10px 10px 0;
     margin: 20px 0;
+}
 }
