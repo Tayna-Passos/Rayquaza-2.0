@@ -110,11 +110,11 @@ ul a:hover {
     color: #ffcc00;
 }
 
-/* --- AJUSTES PARA CELULAR (Telas de até 768px) --- */
+/* --- AJUSTES PARA CELULAR (*/
 
 @media (max-width: 758px) {
     body {
-        margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
+        margin: 10px; /* Reduz a margem lateral no celular para ganhar espaço */
         font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
     }
 
@@ -132,7 +132,7 @@ ul a:hover {
 
     img {
         margin-left: 0; /* Remove aquele margin-left de 200px que quebraria o layout */
-        width: 100%;
+        width: 80%;
     }
 
     blockquote, p, h3 {
