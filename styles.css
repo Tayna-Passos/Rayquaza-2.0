@@ -112,7 +112,7 @@ ul a:hover {
 
 /* --- AJUSTES PARA CELULAR (Telas de até 768px) --- */
 
-@media (max-width: 768px) {
+@media (max-width: 758px) {
     body {
         margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
         font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
