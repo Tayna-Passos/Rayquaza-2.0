@@ -18,7 +18,6 @@ body {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
-    box-sizing: border-box;
 }
 
 h2 {
@@ -111,62 +110,12 @@ ul a:hover {
     color: #ffcc00;
 }
 
-/* --- AJUSTES PARA CELULAR (*/
-
-@media (max-width: 768px) {
-    body {
-        margin: 10px; /* Reduz a margem lateral no celular para ganhar espaço */
-        font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
-        box-sizing: border-box;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    .cabecalho img {
-        width: 80%; /* Logo maior no celular para ser visível */
-    }
-
-    .Dev div {
-        width: 100%; /* No celular, cada dev ocupa a linha toda */
-    }
-
-    img {
-        margin-left: 0; /* Remove aquele margin-left de 200px que quebraria o layout */
-        width: 80%;
-    }
-
-    blockquote, p, h3 {
-        font-size: 18px !important; /* Ajuste de leitura para telas pequenas */
-    }
-    .form-container, .weather-container {
-        width: 100%; 
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-}
-/* --- SEU CSS ORIGINAL (Sem alterações) --- */
-/* (Mantenha o resto do seu CSS como estava acima) */
-
-.Dev{
-    display:flex;
-    flex-wrap: wrap;
-}
-.Dev div{
-    border: 10px solid #53BAFA;
-    width: 500px;
-}
-
-/* ... (Mantenha o resto do seu CSS até o @media) ... */
-
 /* --- AJUSTES PARA CELULAR (Telas de até 768px) --- */
 
 @media (max-width: 768px) {
     body {
         margin: 15px; /* Reduz a margem lateral no celular para ganhar espaço */
         font-size: 18px; /* Diminui um pouco a fonte para não ficar gigante */
-        box-sizing: border-box;
     }
 
     h2 {
@@ -179,19 +128,7 @@ ul a:hover {
 
     .Dev div {
         width: 100%; /* No celular, cada dev ocupa a linha toda */
-        text-align: center; /* Centraliza o conteúdo (avatar + nome) */
-        padding: 10px 0; /* Adiciona um pouco de espaçamento vertical */
     }
-
-    /* --- ESTA É A NOVA REGRA PARA DIMINUIR OS AVATARES NO CELULAR --- */
-    .Dev img {
-        width: 100px; /* Reduz a largura para 100px */
-        height: 100px; /* Reduz a altura para 100px */
-        border-radius: 50%; /* Mantém os avatares redondos */
-        object-fit: cover; /* Garante que a imagem se ajuste ao círculo sem distorcer */
-        margin: 10px auto; /* Centraliza o avatar horizontalmente e adiciona margem vertical */
-    }
-    /* ----------------------------------------------------------------- */
 
     img {
         margin-left: 0; /* Remove aquele margin-left de 200px que quebraria o layout */
@@ -201,14 +138,6 @@ ul a:hover {
     blockquote, p, h3 {
         font-size: 18px !important; /* Ajuste de leitura para telas pequenas */
     }
-}
-/* Reduzindo especificamente as imagens de CEP e Previsão na div .service */
-.service img {
-    width: 400px; /* Altere este valor para o tamanho desejado */
-    height: auto;
-    display: inline-block; /* Mantém as imagens alinhadas horizontalmente */
-    margin: 20px; /* Margem menor e centralizada */
-    margin-left: 20px; /* Remove o margin-left de 200px */
 }
 /* 1. Novo Fundo com Gradiente */
 body {
@@ -242,7 +171,7 @@ a:hover {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 20px;
-    width: 250px; /* Largura mais padrão para cards */
+    width: 280px; /* Largura mais padrão para cards */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
@@ -254,5 +183,4 @@ blockquote {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0 10px 10px 0;
     margin: 20px 0;
-}
 }
