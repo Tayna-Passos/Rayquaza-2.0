@@ -372,6 +372,7 @@ body {
         display: block; /* Muda de flex para block para permitir rolagem natural */
         overflow-y: auto;
         overflow-x: hidden;
+        margin: 0;
         padding: 110px 15px 40px 15px; /* Espaço para não cobrir o topo */
         height: auto;
         min-height: 100vh;
