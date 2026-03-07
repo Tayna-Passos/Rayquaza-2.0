@@ -1,42 +1,35 @@
-# 🐉 Rayquaza 2.0 - A Evolução da Pokédex
+# 🐉 Rayquaza 2.0 - Localização & Clima em Tempo Real
 
 ![Rayquaza Banner](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png)
 
-O **Rayquaza 2.0** é o upgrade definitivo do meu projeto de Pokédex. Esta versão foi totalmente reconstruída para oferecer uma interface moderna, animações fluidas e uma experiência de utilizador (UX) de alto nível, com foco principal na acessibilidade móvel.
+O Rayquaza 2.0 é uma ferramenta inteligente de consulta que integra dados de localização e meteorologia. Com apenas um código de endereçamento postal (CEP), a aplicação identifica a região e entrega instantaneamente as condições climáticas atuais.
 
-## 🔗 Link do Projeto
-Explore a nova versão aqui: [https://tayna-passos.github.io/Rayquaza-2.0/](https://tayna-passos.github.io/Rayquaza-2.0/)
+🔗 Demonstração
+Aceda ao projeto aqui: https://tayna-passos.github.io/Rayquaza-2.0/
 
----
+🛠️ O que esta ferramenta faz?
+Consulta de CEP: Identifica rua, bairro, cidade e estado automaticamente via API.
 
-## ✨ O que mudou na Versão 2.0?
+Integração Climática: Com base na cidade localizada, faz uma segunda chamada para obter temperatura, humidade e condições do tempo.
 
-### 🎨 Design Moderno
-* **Interface Refinada:** Cartões com sombras suaves, cores vibrantes baseadas nos tipos de Pokémon e tipografia moderna.
-* **Visual Clean:** Menos ruído visual, focando no que importa: os dados do Pokémon.
+Design Adaptativo: Interface moderna e "clean", totalmente otimizada para uso em smartphones e tablets.
 
-### 📱 Full Mobile Support
-* **Responsive Engine:** O layout não apenas "cabe" no telemóvel, ele foi **desenhado** para dispositivos móveis primeiro (*Mobile-First*).
-* **Toque Otimizado:** Botões e elementos de interação com áreas de clique ideais para dedos.
-* **Navegação Fluida:** Scroll suave e transições que parecem uma app nativa.
+🚀 Tecnologias e APIs
+Para este upgrade, utilizei tecnologias modernas para garantir uma resposta rápida:
 
-### ⚙️ Melhorias Técnicas
-* **Consumo de API Otimizado:** Chamadas mais rápidas à [PokeAPI](https://pokeapi.co/).
-* **Performance:** Código limpo e carregamento de imagens eficiente.
+ViaCEP API: Para a busca de endereços brasileiros.
 
----
+OpenWeatherMap API (ou similar): Para os dados meteorológicos em tempo real.
 
-## 🛠️ Tecnologias Utilizadas
-* **HTML5 Semantic:** Para melhor SEO e acessibilidade.
-* **CSS3 Advanced:** Uso de Variáveis (Custom Properties), Flexbox e Grid Layout.
-* **JavaScript ES6+:** Manipulação dinâmica do DOM, `fetch`, `async/await` e filtros inteligentes.
+JavaScript (Async/Await): Para gerir múltiplas requisições de forma síncrona e eficiente.
 
-## 🚀 Funcionalidades
-- [x] Pesquisa em tempo real por nome ou número.
-- [x] Filtro de tipos com cores dinâmicas.
-- [x] Galeria de sprites oficiais em alta definição.
-- [x] Totalmente adaptável a qualquer tamanho de ecrã.
+CSS Flexbox/Grid: Para garantir que o layout "não parta" em ecrãs pequenos.
 
-cd Rayquaza-2.0
+📱 Destaque: Mobile Experience
+Diferente da versão anterior, o Rayquaza 2.0 foi construído com a filosofia Mobile-First:
 
-# Abra o index.html no seu navegador favorito
+Input facilitado: Campos de texto otimizados para teclados numéricos.
+
+Leitura Rápida: Informações cruciais (Temperatura e Local) ganham destaque visual.
+
+Leveza: Carregamento instantâneo mesmo em conexões 3G/4G.
