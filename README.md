@@ -1,4 +1,4 @@
-# 🐉 Rayquaza 2.0 - Localização & Clima em Tempo Real
+# Rayquaza 2.0 - Localização & Clima em Tempo Real
 
 ![Rayquaza Banner](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png)
 
